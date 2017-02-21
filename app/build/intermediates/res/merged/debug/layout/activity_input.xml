@@ -15,11 +15,11 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/etFeet"
         android:layout_alignBaseline="@+id/lblHeight"
         android:layout_alignBottom="@+id/lblHeight"
-        android:layout_alignLeft="@+id/radioGroup"
-        android:layout_alignStart="@+id/radioGroup" />
+        android:layout_alignLeft="@+id/rgGenders"
+        android:layout_alignStart="@+id/rgGenders" />
 
     <TextView
         android:text="Calculate Standard Weight"
@@ -49,7 +49,7 @@
         android:layout_alignTop="@+id/lblGender"
         android:layout_alignRight="@+id/lblCSW"
         android:layout_alignEnd="@+id/lblCSW"
-        android:id="@+id/radioGroup"
+        android:id="@+id/rgGenders"
         android:orientation="horizontal">
 
         <RadioButton
@@ -75,7 +75,7 @@
         android:text="Height:"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup"
+        android:layout_below="@+id/rgGenders"
         android:layout_alignLeft="@+id/lblGender"
         android:layout_alignStart="@+id/lblGender"
         android:layout_marginTop="24dp"
@@ -88,8 +88,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/lblFeet"
         android:layout_alignBottom="@+id/lblHeight"
-        android:layout_toRightOf="@+id/editText2"
-        android:layout_toEndOf="@+id/editText2" />
+        android:layout_toRightOf="@+id/etFeet"
+        android:layout_toEndOf="@+id/etFeet" />
 
     <EditText
         android:layout_width="24dp"
