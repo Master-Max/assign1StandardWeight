@@ -13,8 +13,10 @@ public class results extends AppCompatActivity {
 
         Intent input = getIntent();
 
-        int gender;
-        int feet;
-        int inches;
+        int gender = input.getIntExtra("gender", 0);
+        int feet = input.getIntExtra("feet", 0);
+        int inches = input.getIntExtra("inches", 0);
+
+        System.out.println("Results: G-"+gender+" F/I-"+feet+"/"+inches);
     }
 }

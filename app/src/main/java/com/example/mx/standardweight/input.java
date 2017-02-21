@@ -10,12 +10,16 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import static com.example.mx.standardweight.R.id.btCalc;
+import static com.example.mx.standardweight.R.id.rbFemale;
+import static com.example.mx.standardweight.R.id.rbMale;
 import static com.example.mx.standardweight.R.id.rgGenders;
 import static com.example.mx.standardweight.R.id.etFeet;
 import static com.example.mx.standardweight.R.id.etInch;
 
 public class input extends AppCompatActivity {
     RadioGroup rgG;
+    RadioButton rbM;
+    RadioButton rbF;
     EditText etF;
     EditText etI;
 
@@ -25,6 +29,8 @@ public class input extends AppCompatActivity {
         setContentView(R.layout.activity_input);
 
         rgG = (RadioGroup) findViewById(rgGenders);
+        rbM = (RadioButton) findViewById(rbMale);
+        rbF = (RadioButton) findViewById(rbFemale);
         etF = (EditText) findViewById(etFeet);
         etI = (EditText) findViewById(etInch);
 
@@ -35,7 +41,7 @@ public class input extends AppCompatActivity {
             public void onClick(View v) {
                 int feet = getFeet();
                 int inches = getInches();
-                int gender = getGender(v);
+                int gender = getGender();
 
                 System.out.println("F: " + feet);
                 System.out.println("I: " + inches);
@@ -48,6 +54,14 @@ public class input extends AppCompatActivity {
                 startActivity(startIntent);
             }
         });
+/*
+        rgG.setOnCheckedChangeListener(new View.OnContextClickListener(){
+            @Override
+            public void onContextClick(View v){
+
+            }
+        });*/
+
     }
 
     public int getFeet(){
@@ -56,20 +70,27 @@ public class input extends AppCompatActivity {
     public int getInches(){
         return Integer.parseInt(etI.getText().toString());
     }
-    public int getGender(View v){
+    public int getGender(){
+        int selID = rgG.getCheckedRadioButtonId();
+        int mID = rbM.getId();
+        int fID = rbF.getId();
+        System.out.printf("selID: %d mID: %d fID: %d", selID, mID, fID);
+        return 0;
+    }
+   /* public int getGender(View v){
         int gender = 0;
         boolean checked = ((RadioButton) v).isChecked();
 
         switch(v.getId()){
             case R.id.rbMale:
                 if(checked)
-                    gender = 0;
+                    gender = 1;
                 break;
             case R.id.rbFemale:
                 if(checked)
-                    gender = 1;
+                    gender = 2;
                 break;
         }
         return gender;
-    }
+    }*/
 }
