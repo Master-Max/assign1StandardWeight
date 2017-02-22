@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import static com.example.mx.standardweight.R.id.btCalc;
 import static com.example.mx.standardweight.R.id.rbFemale;
@@ -22,6 +23,10 @@ public class input extends AppCompatActivity {
     RadioButton rbF;
     EditText etF;
     EditText etI;
+
+    int feet = 0;
+    int inches = 0;
+    int gender = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,9 +44,9 @@ public class input extends AppCompatActivity {
         calc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int feet = getFeet();
-                int inches = getInches();
-                int gender = getGender();
+                feet = getFeet();
+                inches = getInches();
+                gender = getGender();
 
                 System.out.println("F: " + feet);
                 System.out.println("I: " + inches);
@@ -65,17 +70,33 @@ public class input extends AppCompatActivity {
     }
 
     public int getFeet(){
-        return Integer.parseInt(etF.getText().toString());
+        if(etF.getText().toString().matches("")){
+            Toast.makeText(this,"Enter Feet", Toast.LENGTH_SHORT).show();
+            return 0;
+        }else{
+            return Integer.parseInt(etF.getText().toString());
+        }
     }
     public int getInches(){
-        return Integer.parseInt(etI.getText().toString());
+        if(etI.getText().toString().matches("")){
+            return 0;
+        }else{
+            return Integer.parseInt(etI.getText().toString());
+        }
     }
     public int getGender(){
         int selID = rgG.getCheckedRadioButtonId();
         int mID = rbM.getId();
         int fID = rbF.getId();
-        System.out.printf("selID: %d mID: %d fID: %d", selID, mID, fID);
-        return 0;
+        System.out.printf("selID: %d mID: %d fID: %d\n", selID, mID, fID);
+
+        if(selID == mID){
+            return 1;
+        }else if(selID == fID){
+            return 2;
+        }else{
+            return 0;
+        }
     }
    /* public int getGender(View v){
         int gender = 0;

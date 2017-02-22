@@ -10,4 +10,69 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.mx.standardweight.results">
 
+    <TextView
+        android:text="You are:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="45dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="48dp"
+        android:id="@+id/lblRGend" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lblRGend"
+        android:layout_toRightOf="@+id/lblRGend"
+        android:layout_toEndOf="@+id/lblRGend"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:id="@+id/rGender" />
+
+    <TextView
+        android:text="Your height is:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/lblRHeight"
+        android:layout_below="@+id/lblRGend"
+        android:layout_alignLeft="@+id/lblRGend"
+        android:layout_alignStart="@+id/lblRGend" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rHeight"
+        android:layout_alignBaseline="@+id/lblRHeight"
+        android:layout_alignBottom="@+id/lblRHeight"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"/>
+
+    <TextView
+        android:text="Your standard weight is:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/lblRWeight"
+        android:layout_below="@+id/lblRHeight"
+        android:layout_alignLeft="@+id/lblRHeight"
+        android:layout_alignStart="@+id/lblRHeight" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rWeight"
+        android:layout_alignBaseline="@+id/lblRWeight"
+        android:layout_alignBottom="@+id/lblRWeight"
+        android:layout_toRightOf="@+id/lblRWeight"
+        android:layout_toEndOf="@+id/lblRWeight"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"/>
 </RelativeLayout>
